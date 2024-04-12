@@ -73,4 +73,9 @@ body, html {
       object-fit: contain; /* Ensure the entire content is visible within the container */
     }
   }
-  
+
+  @media only screen and (max-width: 600px) {
+    .media-wrapper p {
+      font-size: 14px; /* Adjust the font size for smaller screens */
+    }
+  }
