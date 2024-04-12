@@ -1,0 +1,76 @@
+
+@font-face {
+  font-family: 'Caxton';
+  src: url('CAXTON~4.TTF') format('truetype'); 
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: black;
+  }
+  
+  #gallery {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  .media-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none; /* Hide all media initially */
+  }
+  
+  .media-wrapper p {
+    position: absolute;
+    top: 10px; /* Adjust the top position as needed */
+    left: 20px; /* Adjust the left position as needed */
+    font-size: 18px;
+    color: black;
+    font-family: 'Caxton', 'serif';
+  }
+
+  a {
+    color: black;
+    text-decoration: underline;
+  }
+  .media-wrapper.active {
+    display: block; /* Show the active media item */
+    z-index: 1; /* Ensure it's on top */
+  }
+  
+  img, video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @media only screen and (max-width: 600px) {
+    #gallery .media-wrapper {
+      width: 100vh; /* Set width to viewport height to fit the screen */
+      height: 100vw; /* Set height to viewport width to fit the screen */
+      top: 50%; /* Align to the center vertically */
+      left: 50%; /* Align to the center horizontally */
+      position: absolute; 
+      overflow: hidden; /* Hide overflow to prevent cropping */
+      transform-origin: center; /* Set the rotation origin to the center */
+      transform: translate(-50%, -50%) rotate(-90deg); /* Translate and rotate */
+      display: flex; /* Use flexbox for centering */
+      justify-content: center; /* Center horizontally */
+      align-items: center; /* Center vertically */
+    }
+  
+    #gallery .media-wrapper img,
+    #gallery .media-wrapper video {
+      width: 100%; /* Set maximum width to 100% */
+      height: auto; /* Set maximum height to 100% */
+      object-fit: contain; /* Ensure the entire content is visible within the container */
+    }
+  }
+  
